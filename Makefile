@@ -55,6 +55,9 @@ qtest: $(OBJS)
 
 check: qtest
 	./$< -v 3 -f traces/trace-eg.cmd
+	
+trace01: qtest
+	./$< -v 3 -f traces/trace-01-ops.cmd
 
 test: qtest scripts/driver.py
 	scripts/driver.py -c
